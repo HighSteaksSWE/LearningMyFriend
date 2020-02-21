@@ -1,5 +1,6 @@
-.gradle
-/build/
+# we want to keep build files
+#.gradle
+#/build/
 
 # Ignore Gradle GUI config
 gradle-app.setting
