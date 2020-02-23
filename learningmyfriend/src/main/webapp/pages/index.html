@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <div class="buttonbar">
+            <button>File</button>
+            <button>Edit</button>
+            <button>Insert</button>
+            <button>View</button>
+            <button>Print</button>
+            <button>QR</button>
+            <button>Present</button>
+            <button>Help</button>
+        </div>
+        
+        <div class="textedit">
+            <select name="font">
+                <option>Times New Roman</option>
+                <option>Comic Sans</option>
+                <option>Lucida Console</option>
+                <option>Courier New</option>
+                <option>Papyrus </option>
+            </select>
+            
+            <button>B</button>
+            <button>I</button>
+            <button>U</button>
+        </div>
+        
+        <h1>Your Todos (<span data-bind="text: numTodos"></span>)</h1>
+        <label for="key">New Todo:</label>
+        <input id="key" type="text" data-bind="textInput: desc" placeholder="Enter a task"/>
+        <button data-bind="click: addTodo, enable: desc">Add</button>
+        <ul class="todos" data-bind='foreach: todos'>
+            <li>
+                <span data-bind="text: $data"></span>
+            </li>
+        </ul>
+
+    </body>
+</html>
