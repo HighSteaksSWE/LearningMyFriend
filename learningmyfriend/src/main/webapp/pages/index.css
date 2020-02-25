@@ -1,0 +1,84 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.buttonbar {
+    display: flex;
+    flex-direction: row;
+    background-color: orange;
+    padding: 0.5%;
+}
+
+.buttonbar button {
+    background: whitesmoke;
+}
+
+.buttonbar button:hover {
+    background: white;
+}
+
+.buttonbar button:active {
+    background: grey;
+    color: white
+}
+
+button:focus , select:focus {
+    outline: #ff6600 solid 2px;
+}
+
+button {
+    width: 5%;
+    margin-right: 1%;
+    border: none;
+}
+
+.textedit {
+    display: flex;
+    flex-direction: row;
+    background-color: whitesmoke;
+    padding: 0.75%;
+}
+
+.textedit button {
+    background-color: whitesmoke;
+}
+
+.slidepanel {
+    width: 30%;
+    overflow-y: scroll;
+    flex-grow: 1;
+}
+
+.slide {
+    display: flex;
+    flex-direction: row;
+    margin: 5%;
+    justify-content: flex-end;
+}
+
+.slidepreview {
+    padding: 25%;
+    flex-grow: 5;
+    text-align: center;
+    margin: 5%;
+    border: 1px #ff6600 solid;
+}
+
+.slidenumber {
+    flex-grow: 1;
+    border: 1px #ff6600 solid;
+    text-align: center;
+    padding: 2%;
+    margin: 5%;
+    margin-top: 30%;
+    margin-bottom: 30%;
+}
