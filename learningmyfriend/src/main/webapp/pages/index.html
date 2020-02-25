@@ -3,6 +3,7 @@
     <head>
         <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="index.css" />
     </head>
     <body>
         <div class="buttonbar">
@@ -25,20 +26,30 @@
                 <option>Papyrus </option>
             </select>
             
-            <button>B</button>
-            <button>I</button>
-            <button>U</button>
+            <button style="width: 2%;"><b>B</b></button>
+            <button style="width: 2%;"><i>I</i></button>
+            <button style="width: 2%;"><u>U</u></button>
         </div>
         
-        <h1>Your Todos (<span data-bind="text: numTodos"></span>)</h1>
-        <label for="key">New Todo:</label>
-        <input id="key" type="text" data-bind="textInput: desc" placeholder="Enter a task"/>
-        <button data-bind="click: addTodo, enable: desc">Add</button>
-        <ul class="todos" data-bind='foreach: todos'>
-            <li>
-                <span data-bind="text: $data"></span>
-            </li>
-        </ul>
+        <div class="slidepanel">
+            <div class="slide">
+                <div class="slidepreview">
+                    Preview
+                </div>
+                <div class="slidenumber">
+                    1
+                </div>
+            </div>
+            <div class="slide">
+                <img src="" alt="Preview Image" class="slidepreview" />
+                <div class="slidenumber">
+                    2
+                </div>
+            </div>
+            <div class="slide">
+                <img src="" alt="Add Slide Image" class="slidepreview" />
+            </div>
+        </div>
 
     </body>
 </html>
