@@ -37,9 +37,41 @@ button:focus , select:focus {
 }
 
 button {
+    border: none;
+}
+
+.dropdown {
     width: 5%;
     margin-right: 1%;
     border: none;
+    text-align: center;
+    background-color: whitesmoke;
+    display: inline-block;
+}
+
+.dropdowncontent {
+    border: 1px solid #006747;
+    position: absolute;
+    display: none;
+    text-align: left;
+    min-width: 10%;
+    background-color: whitesmoke;
+}
+
+.dropdown:hover .dropdowncontent {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown:hover .dropdowncontent * {
+    padding: 2%;
+    margin: 1%;
+    text-align: left;
+}
+
+.dropdown:hover .dropdowncontent *:hover {
+    padding: 2%;
+    background-color: lightgray;
 }
 
 .textedit {
@@ -94,7 +126,7 @@ button {
     color: white;
 }
 
-.slideedit {
+#slideedit {
     flex: 3.5;
     border: 1px solid black;
 }

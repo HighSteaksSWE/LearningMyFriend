@@ -8,14 +8,55 @@
     </head>
     <body>
         <div class="buttonbar">
-            <button>File</button>
-            <button>Edit</button>
-            <button>Insert</button>
-            <button>View</button>
-            <button>Print</button>
-            <button>QR</button>
-            <button>Present</button>
-            <button>Help</button>
+            <div class="dropdown">
+                File
+                <div class="dropdowncontent">
+                    <button>New</button>
+                    <button>Save</button>
+                    <button>Save As...</button>
+                    <button>Open</button>
+                    <button>Export</button>
+                    <button>Print</button>
+                    <button>Rename</button>
+                    <button>Close</button>
+                </div>
+            </div>
+            <div class="dropdown">
+                Edit
+                <div class="dropdowncontent">
+                    <button>Undo</button>
+                    <button>Redo</button>
+                    <button>Cut</button>
+                    <button>Copy</button>
+                    <button>Paste</button>
+                </div>
+            </div>
+            <div class="dropdown">
+                Insert
+                <div class="dropdowncontent">
+                    <button>New Slide</button>
+                    <button>Text Box</button>
+                    <button>Image</button>
+                    <button>Shape</button>
+                    <button>Code</button>
+                </div>
+
+            </div>
+            <div class="dropdown">
+                View
+                <div class="dropdowncontent">
+                    <button>Zoom In</button>
+                    <button>Zoom Out</button>
+                    <button>Reset Zoom</button>
+                    <button>Slide Panel</button>
+                    <button>Slide Preview</button>
+                    <button>Slide Numbers</button>
+                </div>
+            </div>
+            <div class="dropdown">Print</div>
+            <div class="dropdown">QR</div>
+            <div class="dropdown">Present</div>
+            <div class="dropdown">Help</div>
         </div>
 
         <div class="textedit">
@@ -62,12 +103,12 @@
                     <img src="" alt="Add Slide Image" class="slidepreview" />
                 </div>
             </div>
-            <div class="slideedit">
-                
+            <div id="slideedit">
+
             </div>
         </div>
         <div class="footer">
-                
+
         </div>
         <!--<script src="draggable.js"></script>-->
     </body>
