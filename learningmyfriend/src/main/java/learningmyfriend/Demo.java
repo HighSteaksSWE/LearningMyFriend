@@ -1,3 +1,8 @@
+/*
+
+
+*/
+
 package learningmyfriend;
 
 import com.dukescript.api.javafx.beans.FXBeanInfo;
@@ -14,6 +19,17 @@ public final class Demo implements FXBeanInfo.Provider {
     private final StringProperty desc = new SimpleStringProperty(this, "desc", "Buy Milk");
     private final ListProperty<String> todos = new SimpleListProperty<>(this, "todos", FXCollections.observableArrayList());
     private final IntegerBinding numTodos = Bindings.createIntegerBinding(todos::size, todos);
+    
+    public int textID = 1;
+    
+
+    
+    public String createText(){
+        String textName = "text" + Integer.toString(this.textID); 
+        Text text = new Text(textName);
+        this.textID +=1 ; // updating the ID for future text names
+        return text.getName(); 
+    }
 
     void addTodo() {
         todos.getValue().add(desc.getValue());
@@ -25,6 +41,7 @@ public final class Demo implements FXBeanInfo.Provider {
             .property(todos)
             .property("numTodos", numTodos)
             .action("addTodo", this::addTodo)
+            .action("ctreateText",this::createText)
             .build();
 
     @Override

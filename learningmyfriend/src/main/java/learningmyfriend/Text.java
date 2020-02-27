@@ -11,16 +11,18 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class Text extends Object{
 
-    private  StringProperty text = new SimpleStringProperty(this, "text", "");
-    private IntegerProperty size = new SimpleIntegerProperty(this, "size", 12);
+    private  StringProperty text ;
     //public Stack<event> stackOfEvents = new Stack<>();
     
     
-    public Text() {     
+    public Text(String name) { 
+      
+      this.text = new SimpleStringProperty(this, name , "");
     }
 
-    public void setText(StringProperty text) {
-        this.text = text;
+// set text value
+    public void setText(String text) {
+        this.text.setValue(text) ;
     }
 
     public StringProperty getText() {
