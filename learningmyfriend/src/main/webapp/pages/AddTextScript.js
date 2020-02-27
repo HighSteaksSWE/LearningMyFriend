@@ -1,4 +1,5 @@
-function addText() {
+function addText(name) {
+    console.log(name);
     document.getElementById("slideedit").innerHTML +=
-            "<p contenteditable='true'>Insert Text</p>";
-} 
+            "<p contenteditable='true'>" + name + "</p>";
+}

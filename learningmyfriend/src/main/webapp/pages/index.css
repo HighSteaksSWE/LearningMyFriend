@@ -124,6 +124,7 @@ button {
     border-radius: 50%;
     background: #DA291C;
     color: white;
+    width: 5%;
 }
 
 #slideedit {

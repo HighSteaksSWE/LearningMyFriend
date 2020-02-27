@@ -1,4 +1,4 @@
-package project2;
+package learningmyfriend;
 
 import java.io.*; 
 import java.util.*; 

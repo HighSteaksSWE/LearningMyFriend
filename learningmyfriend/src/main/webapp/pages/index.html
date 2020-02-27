@@ -36,7 +36,7 @@
                 Insert
                 <div class="dropdowncontent">
                     <button>New Slide</button>
-                    <button onclick="addText()">Text Box</button>
+                    <button data-bind="click: createText" >Text Box</button>
                     <button>Image</button>
                     <button>Shape</button>
                     <button>Code</button>
@@ -78,25 +78,25 @@
             <div class="slidepanel">
                 <div class="slide">
                     <img src="" alt="Preview Image" class="slidepreview" />
-                    <div class="slidenumber">
+                    <div contenteditable='true' class="slidenumber">
                         1
                     </div>
                 </div>
                 <div class="slide">
                     <img src="" alt="Preview Image" class="slidepreview" />
-                    <div class="slidenumber">
+                    <div contenteditable='true' class="slidenumber">
                         2
                     </div>
                 </div>
                 <div class="slide">
                     <img src="" alt="Preview Image" class="slidepreview" />
-                    <div class="slidenumber">
+                    <div contenteditable='true' class="slidenumber">
                         3
                     </div>
                 </div>
                 <div class="slide">
                     <img src="" alt="Preview Image" class="slidepreview" />
-                    <div class="slidenumber">
+                    <div contenteditable='true' class="slidenumber">
                         #
                     </div>
                 </div>

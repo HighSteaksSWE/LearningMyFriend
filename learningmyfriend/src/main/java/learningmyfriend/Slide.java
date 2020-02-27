@@ -1,5 +1,4 @@
-
-package project2;
+package learningmyfriend;
 /**
  *
  * @author mariashehata
