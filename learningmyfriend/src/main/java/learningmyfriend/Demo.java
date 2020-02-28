@@ -1,6 +1,7 @@
 package learningmyfriend;
 
 import com.dukescript.api.javafx.beans.FXBeanInfo;
+import com.dukescript.api.javafx.beans.ActionDataEvent;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.IntegerBinding;
 import javafx.beans.property.IntegerProperty;
@@ -44,7 +45,7 @@ public final class Demo implements FXBeanInfo.Provider {
             .property(textCount)
             .property("numTodos", numTodos)
             .action("addTodo", this::addTodo)
-            .property("createText", createText)
+            .action("createText", this::createText)
             .build();
     
     @Override
