@@ -4,8 +4,18 @@
         <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="index.css" />
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="AddTextScript.js" ></script>
-
+        <script>
+            $(document).ready(
+                    function () {
+                        document.makeDraggable = function (e) {
+                            $(e).draggable();
+                        };
+                    }
+            );
+        </script>
     </head>
     <body>
         <div class="buttonbar">
@@ -36,7 +46,7 @@
                 Insert
                 <div class="dropdowncontent">
                     <button>New Slide</button>
-                    <button data-bind="click: function() {increaseTextCount(); addText(textCount())}">Text Box</button>
+                    <button data-bind="click: function() {increaseTextCount(); addText(textCount()); makedraggable()}">Text Box</button>
                     <button>Image</button>
                     <button>Shape</button>
                     <button>Code</button>
@@ -111,6 +121,6 @@
         <div class="footer">
 
         </div>
-        <!--<script src="draggable.js"></script>-->
+        <script src="draggable.js"></script>
     </body>
 </html>

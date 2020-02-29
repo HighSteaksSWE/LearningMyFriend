@@ -136,3 +136,21 @@ button {
     background-color: #006747;
     height: 5%;
 }
+
+.textbox {
+    position: absolute;
+    padding: 50px;
+}
+
+.textbox:hover .textboxheader {
+    display: inline-block;
+    opacity: 1;
+}
+
+.textboxheader {
+    text-align: center;
+    width: 100%;
+    padding-top: 10px;
+    opacity: 0;
+    background: #006747;
+}

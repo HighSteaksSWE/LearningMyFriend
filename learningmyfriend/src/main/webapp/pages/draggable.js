@@ -1,9 +1,6 @@
 //code to make elements draggable
 //source: https://www.w3schools.com/howto/howto_js_draggable.asp
 
-// Make the DIV element draggable:
-dragElement(document.getElementById("editslide"));
-
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   if (document.getElementById(elmnt.id + "header")) {
