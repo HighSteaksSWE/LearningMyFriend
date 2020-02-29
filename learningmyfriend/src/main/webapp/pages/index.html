@@ -36,7 +36,7 @@
                 Insert
                 <div class="dropdowncontent">
                     <button>New Slide</button>
-                    <button data-bind="click: createText" >Text Box</button>
+                    <button data-bind="click: function() {increaseTextCount(); addText(textCount())}">Text Box</button>
                     <button>Image</button>
                     <button>Shape</button>
                     <button>Code</button>

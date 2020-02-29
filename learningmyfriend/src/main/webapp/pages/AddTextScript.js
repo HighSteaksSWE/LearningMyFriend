@@ -1,5 +1,5 @@
 function addText(name) {
-    console.log(name);
+    name = "textBox" + name;
     document.getElementById("slideedit").innerHTML +=
-            "<p contenteditable='true'>" + name + "</p>";
+            "<p class='textbox' contenteditable='true' id='" + name + "'>This is " + name + "</p>";
 }
