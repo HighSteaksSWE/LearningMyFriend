@@ -47,6 +47,9 @@
                 <div class="dropdowncontent">
                     <button>New Slide</button>
                     <button data-bind="click: function() {increaseTextCount(); addText(textCount()); makedraggable()}">Text Box</button>
+                    <input type='text' id='idea' />
+                    <input type='button' value='add to list' id='add'/>
+                    <ul id='list'></ul>
                     <button>Image</button>
                     <button>Shape</button>
                     <button>Code</button>
@@ -72,7 +75,7 @@
 
         <div class="textedit">
             <select name="font">
-                <option>Times New Roman</option>
+                <option>Times New Roman</optislideediton>
                 <option>Comic Sans</option>
                 <option>Lucida Console</option>
                 <option>Courier New</option>
