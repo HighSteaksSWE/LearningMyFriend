@@ -7,7 +7,7 @@ function addText(name) {
     document.makeDraggable(document.getElementById(name));
 }
 
-// List (Listener to thr add list button) 
+/* List (Listener to thr add list button) 
 document.getElementById('add').addEventListener("click", addList)
 
 function addList(){
@@ -17,3 +17,4 @@ function addList(){
   node.appendChild(textNode);     
   document.getElementById('list').appendChild(node);
 };
+*/

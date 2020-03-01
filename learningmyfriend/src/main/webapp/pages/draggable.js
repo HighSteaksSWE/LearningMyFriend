@@ -1,6 +1,6 @@
 //code to make elements draggable
 //source: https://www.w3schools.com/howto/howto_js_draggable.asp
-
+// source of text List: https://stackoverflow.com/questions/19908215/adding-user-input-to-a-list-of-text-items-on-a-html-page/42950658
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   if (document.getElementById(elmnt.id + "header")) {
