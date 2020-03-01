@@ -56,6 +56,7 @@
                             var textnode = document.createTextNode(text);
                             node.appendChild(textnode);
                             document.getElementById("list").appendChild(node);
+                            document.makeDraggable(document.getElementById("list"));
                         }
                     </script>
                     <ul id='list'></ul>                    
