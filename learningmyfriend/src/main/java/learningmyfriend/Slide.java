@@ -12,7 +12,7 @@ import javafx.beans.property.IntegerProperty;
 
 public class Slide {
     
-    private IntegerProperty ID = new SimpleIntegerProperty(this, "ID", 0);
+    IntegerProperty ID = new SimpleIntegerProperty(this, "ID", 0);
     ArrayList<Object> objectsList = new ArrayList<Object>();
 
     public Slide() {
