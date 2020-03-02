@@ -46,21 +46,8 @@
                 Insert
                 <div class="dropdowncontent">
                     <button data-bind="click: addSlide">New Slide</button>
-                    <button data-bind="click: function() {increaseTextCount(); addText(textCount()); makedraggable()}">Text Box</button>
-                    <input type='text' id='idea'>
-                    <input type="button" id="add" value="Add New">
-                    <script>document.getElementById("add").onclick = function () {
-
-                            var node = document.createElement("Li");
-                            var text = document.getElementById("idea").value;
-                            var textnode = document.createTextNode(text);
-                            node.appendChild(textnode);
-                            document.getElementById("list").appendChild(node);
-                            document.makeDraggable(document.getElementById("list"));
-                        }
-                    </script>
-                    <ul id='list'></ul>                    
-
+                    <button data-bind="click: function() {increaseTextCount(); addText(textCount()); makedraggable()}">Text Box</button>                   
+                    <input type="button" id="add" value="Add to list">
                     <div>Image<input type="file" accept="image/*"/></div>
                     <button>Shape</button>
                     <button>Code</button>
@@ -129,7 +116,19 @@
                 </div>
             </div>
             <div id="slideedit">
+                <input type='text' id='idea'>
+                <script>document.getElementById("add").onclick = function () {
 
+                        var node = document.createElement("Li");
+                        var text = document.getElementById("idea").value;
+                        var textnode = document.createTextNode(text);
+                        node.appendChild(textnode);
+                        document.getElementById("list").appendChild(node);
+                        document.makeDraggable(document.getElementById("list"));
+                    }
+                </script>
+                <ul id='list'></ul>  
+               
             </div>
         </div>
         <div class="footer">
