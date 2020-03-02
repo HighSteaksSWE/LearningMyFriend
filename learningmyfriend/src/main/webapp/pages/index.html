@@ -45,7 +45,7 @@
             <div class="dropdown">
                 Insert
                 <div class="dropdowncontent">
-                    <button>New Slide</button>
+                    <button data-bind="click: addSlide">New Slide</button>
                     <button data-bind="click: function() {increaseTextCount(); addText(textCount()); makedraggable()}">Text Box</button>
                     <input type='text' id='idea'>
                     <input type="button" id="add" value="Add New">
