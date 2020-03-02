@@ -6,20 +6,17 @@ import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleListProperty;
 
 public class SlidesDeck {
-    
-    ArrayList<Slide> slidesList = new ArrayList<Slide>();
+    //public ListProperty<Priority> choice
+    SimpleListProperty<Slide> slidesList = new SimpleListProperty<Slide>() ;
 
     public SlidesDeck() {
     }
 
-    
-    public void setSlidesList(ArrayList<Slide> slidesList) {
-        this.slidesList = slidesList;
-    }
 
-    public ArrayList<Slide> getSlidesList() {
+    public SimpleListProperty<Slide> getSlidesList() {
         return slidesList;
     }
 
