@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="index.css" />
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="AddTextScript.js" ></script>
+        <script>
+            $(document).ready(
+                    function () {
+                        document.makeDraggable = function (e) {
+                            $(e).draggable();
+                        };
+                    }
+            );
+        </script>
+    </head>
+    <body>
+        <div class="buttonbar">
+            <div class="dropdown">
+                File
+                <div class="dropdowncontent">
+                    <button>New</button>
+                    <button>Save</button>
+                    <button>Save As...</button>
+                    <button>Open</button>
+                    <button>Export</button>
+                    <button>Print</button>
+                    <button>Rename</button>
+                    <button>Close</button>
+                </div>
+            </div>
+            <div class="dropdown">
+                Edit
+                <div class="dropdowncontent">
+                    <button>Undo</button>
+                    <button>Redo</button>
+                    <button>Cut</button>
+                    <button>Copy</button>
+                    <button>Paste</button>
+                </div>
+            </div>
+            <div class="dropdown">
+                Insert
+                <div class="dropdowncontent">
+                    <button data-bind="click: addSlide">New Slide</button>
+                    <button data-bind="click: function() {increaseTextCount(); addText(textCount()); makedraggable()}">Text Box</button>                   
+                    <input type="button" id="add" value="Add to list">
+                    <div>Image<input type="file" accept="image/*"/></div>
+                    <button>Shape</button>
+                    <button>Code</button>
+                </div>
+
+            </div>
+            <div class="dropdown">
+                View
+                <div class="dropdowncontent">
+                    <button>Zoom In</button>
+                    <button>Zoom Out</button>
+                    <button>Reset Zoom</button>
+                    <button>Slide Panel</button>
+                    <button>Slide Preview</button>
+                    <button>Slide Numbers</button>
+                </div>
+            </div>
+            <div class="dropdown">Print</div>
+            <div class="dropdown">QR</div>
+            <div class="dropdown">Present</div>
+            <div class="dropdown">Help</div>
+        </div>
+
+        <div class="textedit">
+            <select name="font">
+                <option>Times New Roman</optislideediton>
+                <option>Comic Sans</option>
+                <option>Lucida Console</option>
+                <option>Courier New</option>
+                <option>Papyrus </option>
+            </select>
+
+            <button style="width: 2%;"><b>B</b></button>
+            <button style="width: 2%;"><i>I</i></button>
+            <button style="width: 2%;"><u>U</u></button>
+        </div>
+
+        <div class="edit">
+            <div class="slidepanel">
+                <div class="slide">
+                    <img src="" alt="Preview Image" class="slidepreview" />
+                    <div contenteditable='true' class="slidenumber">
+                        1
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="" alt="Preview Image" class="slidepreview" />
+                    <div contenteditable='true' class="slidenumber">
+                        2
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="" alt="Preview Image" class="slidepreview" />
+                    <div contenteditable='true' class="slidenumber">
+                        3
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="" alt="Preview Image" class="slidepreview" />
+                    <div contenteditable='true' class="slidenumber">
+                        #
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="" alt="Add Slide Image" class="slidepreview" />
+                </div>
+            </div>
+            <div id="slideedit">
+                <input type='text' id='idea'>
+                <script>document.getElementById("add").onclick = function () {
+
+                        var node = document.createElement("Li");
+                        var text = document.getElementById("idea").value;
+                        var textnode = document.createTextNode(text);
+                        node.appendChild(textnode);
+                        document.getElementById("list").appendChild(node);
+                        document.makeDraggable(document.getElementById("list"));
+                    }
+                </script>
+                <ul id='list'></ul>  
+               
+            </div>
+        </div>
+        <div class="footer">
+
+        </div>
+        <script src="draggable.js"></script>
+    </body>
+</html>
