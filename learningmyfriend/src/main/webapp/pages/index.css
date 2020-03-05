@@ -148,7 +148,6 @@ button {
 
 .footer {
     background-color: var(--color2);
-    height: 5%;
 }
 
 .textbox {
@@ -167,4 +166,8 @@ button {
     padding-top: 10px;
     opacity: 0;
     background: #006747;
+}
+
+.hide {
+    display: none;
 }
