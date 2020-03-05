@@ -7,6 +7,7 @@
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="AddTextScript.js" ></script>
+        <script src="dropdownmenu.js" ></script>
         <script>
             $(document).ready(
                     function () {
@@ -19,9 +20,9 @@
     </head>
     <body>
         <div class="buttonbar">
-            <div class="dropdown">
+            <div class="dropdown" onclick="myFunction('filedrop')">
                 File
-                <div class="dropdowncontent">
+                <div class="dropdowncontent" id="filedrop" >
                     <button>New</button>
                     <button>Save</button>
                     <button>Save As...</button>
@@ -32,9 +33,9 @@
                     <button>Close</button>
                 </div>
             </div>
-            <div class="dropdown">
+            <div class="dropdown"  onclick="myFunction('editdrop')">
                 Edit
-                <div class="dropdowncontent">
+                <div class="dropdowncontent" id="editdrop">
                     <button>Undo</button>
                     <button>Redo</button>
                     <button>Cut</button>
@@ -42,9 +43,9 @@
                     <button>Paste</button>
                 </div>
             </div>
-            <div class="dropdown">
+            <div class="dropdown"  onclick="myFunction('insertdrop')">
                 Insert
-                <div class="dropdowncontent">
+                <div class="dropdowncontent" id="insertdrop">
                     <button data-bind="click: addSlide">New Slide</button>
                     <button data-bind="click: function() {increaseTextCount(); addText(textCount()); makedraggable()}">Text Box</button>                   
                     <input type="button" id="add" value="Add to list">
@@ -54,9 +55,9 @@
                 </div>
 
             </div>
-            <div class="dropdown">
+            <div class="dropdown"  onclick="myFunction('viewdrop')">
                 View
-                <div class="dropdowncontent">
+                <div class="dropdowncontent" id="viewdrop">
                     <button>Zoom In</button>
                     <button>Zoom Out</button>
                     <button>Reset Zoom</button>
@@ -90,25 +91,25 @@
                 <div class="slide">
                     <img src="" alt="Preview Image" class="slidepreview" />
                     <div contenteditable='true' class="slidenumber">
-                        1
+                        <b>1</b>
                     </div>
                 </div>
                 <div class="slide">
                     <img src="" alt="Preview Image" class="slidepreview" />
                     <div contenteditable='true' class="slidenumber">
-                        2
+                        <b>2</b>
                     </div>
                 </div>
                 <div class="slide">
                     <img src="" alt="Preview Image" class="slidepreview" />
                     <div contenteditable='true' class="slidenumber">
-                        3
+                        <b>3</b>
                     </div>
                 </div>
                 <div class="slide">
                     <img src="" alt="Preview Image" class="slidepreview" />
                     <div contenteditable='true' class="slidenumber">
-                        #
+                        <b>#</b>
                     </div>
                 </div>
                 <div class="slide">
@@ -128,12 +129,12 @@
                     }
                 </script>
                 <ul id='list'></ul>  
-               
+
             </div>
         </div>
-        <div class="footer">
+<!--        <div class="footer">
 
-        </div>
+        </div>-->
         <script src="draggable.js"></script>
     </body>
 </html>
