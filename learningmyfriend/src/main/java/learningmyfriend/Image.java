@@ -60,8 +60,8 @@ public class Image extends Object{
         for (String name: paths){
             this.fileName = name;
         }
-
-        this.here = Paths.get("C:\\Users\\HNS1Lab.NETWORK\\Downloads\\Images\\" + this.fileName);
+        // C:\\Users\\HNS1Lab.NETWORK\\Downloads\\Images\\
+        this.here = Paths.get("/images/" + this.fileName);
     }
 
     public void copyImage(){

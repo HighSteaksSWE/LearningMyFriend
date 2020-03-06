@@ -155,6 +155,11 @@ button {
     padding: 50px;
 }
 
+.image {
+    position: absolute;
+    padding: 50px;
+}
+
 .textbox:hover .textboxheader {
     display: inline-block;
     opacity: 1;

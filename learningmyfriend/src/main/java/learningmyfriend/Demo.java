@@ -10,6 +10,7 @@ import javafx.beans.property.SimpleListProperty;
 public final class Demo implements FXBeanInfo.Provider {
     private SlidesDeck slideDeck = new SlidesDeck();
     private final IntegerProperty textCount = new SimpleIntegerProperty(this, "textCount");
+    private final IntegerProperty imageCount = new SimpleIntegerProperty(this, "imageCount");
     private final IntegerProperty slideCount = new SimpleIntegerProperty(this, "slideCount");
     private SimpleListProperty<Slide> slidesList = new SimpleListProperty<Slide>() ;
     
@@ -17,6 +18,19 @@ public final class Demo implements FXBeanInfo.Provider {
     void increaseTextCount() {
         textCount.setValue(textCount.get() + 1);
     }
+    // img count
+    void increaseImageCount() {
+        imageCount.setValue(imageCount.get() + 1);
+    }
+    
+    // add image
+    String createImage(String filePath){
+        Image img = new Image();
+        img.setImagePath(filePath); 
+        img.copyImage(); 
+        return img.getNewImagePath().toString(); 
+    }
+    
     // add slide
     void addSlide(){
         Slide slide = new Slide();

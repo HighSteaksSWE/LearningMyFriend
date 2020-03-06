@@ -7,6 +7,7 @@
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="AddTextScript.js" ></script>
+        <script src="AddImageScript.js"></script>
         <script src="dropdownmenu.js" ></script>
         <script src="presentScript.js" ></script>
         <script>
@@ -50,7 +51,14 @@
                     <button data-bind="click: addSlide">New Slide</button>
                     <button data-bind="click: function() {increaseTextCount(); addText(textCount()); makedraggable()}">Text Box</button>                   
                     <input type="button" id="add" value="Add to list">
-                    <div>Image<input type="file" accept="image/*"/></div>
+                    <div>Image<input type="file" accept="image/*" id="imagePicker"/>
+                        <button data-bind="click: function() {
+                            addImage(createImage(document.getElementById('imagePicker').value));
+//                            makedraggable(); 
+                            console.log('image uploaded: ' + document.getElementById('imagePicker').value);
+                        }">
+                        Insert selected image</button>
+                    </div>
                     <button>Shape</button>
                     <button>Code</button>
                 </div>
