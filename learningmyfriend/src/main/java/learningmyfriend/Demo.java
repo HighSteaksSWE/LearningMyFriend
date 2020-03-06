@@ -5,7 +5,9 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleListProperty;
 import static net.java.html.json.Models.applyBindings;
-import javafx.beans.property.SimpleListProperty;
+import javafx.beans.property.StringProperty;
+import javafx.beans.property.SimpleStringProperty;
+
 
 public final class Demo implements FXBeanInfo.Provider {
     private SlidesDeck slideDeck = new SlidesDeck();
@@ -13,6 +15,8 @@ public final class Demo implements FXBeanInfo.Provider {
     private final IntegerProperty imageCount = new SimpleIntegerProperty(this, "imageCount");
     private final IntegerProperty slideCount = new SimpleIntegerProperty(this, "slideCount");
     private SimpleListProperty<Slide> slidesList = new SimpleListProperty<Slide>() ;
+    private StringProperty oldPath = new SimpleStringProperty(this, "oldPath");
+    private StringProperty newPath = new SimpleStringProperty(this, "newPath");
     
     // text count
     void increaseTextCount() {
@@ -24,11 +28,13 @@ public final class Demo implements FXBeanInfo.Provider {
     }
     
     // add image
-    String createImage(String filePath){
-        Image img = new Image();
-        img.setImagePath(filePath); 
-        img.copyImage(); 
-        return img.getNewImagePath().toString(); 
+    void createImage(){
+//        Image img = new Image();
+//        img.setImagePath(oldPath.getValue()); 
+//        img.copyImage(); 
+//        newPath.setValue(img.getNewImagePath().toString()); 
+        newPath.setValue("https://i.imgur.com/PQK5p2o.jpg");
+        System.out.println("newPath: " + newPath.getValue());
     }
     
     // add slide
@@ -51,6 +57,9 @@ public final class Demo implements FXBeanInfo.Provider {
             .property(slideCount)
             .action("addSlide", this::addSlide)
             .property(slidesList)
+            .property(oldPath)
+            .property(newPath)
+            .action("createImage", this::createImage)
             .build();
     
     @Override

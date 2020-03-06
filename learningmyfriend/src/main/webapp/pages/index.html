@@ -11,6 +11,7 @@
         <script src="toPdf.js"></script>
         <script src="dropdownmenu.js" ></script>
         <script src="presentScript.js" ></script>
+        <script src="YouTubeEmbedScript.js"></script>
         <script>
             $(document).ready(
                     function () {
@@ -52,14 +53,24 @@
                     <button data-bind="click: addSlide">New Slide</button>
                     <button data-bind="click: function() {increaseTextCount(); addText(textCount()); makedraggable()}">Text Box</button>                   
                     <input type="button" id="add" value="Add to list">
-                    <div>Image<input type="file" accept="image/*" id="imagePicker"/>
+                    <div>Image<input data-bind="value: oldPath" type="file" accept="image/*" id="imagePicker"/>
                         <button data-bind="click: function() {
-                            addImage(createImage(document.getElementById('imagePicker').value));
-//                            makedraggable(); 
-                            console.log('image uploaded: ' + document.getElementById('imagePicker').value);
+                            
+                            createImage();
+                            addImage(newPath());
+                            console.log('image uploaded: ' + newPath());//document.getElementById('imagePicker').value);
                         }">
                         Insert selected image</button>
                     </div>
+                    <button data-bind="click: function() {
+                        var url = prompt('Paste the video URL below');
+                        console.log('0' + url);
+                        url = url.substring(url.lastIndexOf('/') + 1);
+                        console.log('1 ' + url);
+                        url = url.substring(url.lastIndexOf('=') + 1);
+                        console.log('2' + url);
+                        youtubeEmbed(url);
+                    }">YouTube Video</button>
                     <button>Shape</button>
                     <button>Code</button>
                 </div>
