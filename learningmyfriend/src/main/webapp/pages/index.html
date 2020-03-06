@@ -53,15 +53,23 @@
                     <button data-bind="click: addSlide">New Slide</button>
                     <button data-bind="click: function() {increaseTextCount(); addText(textCount()); makedraggable()}">Text Box</button>                   
                     <input type="button" id="add" value="Add to list">
-                    <div>Image<input data-bind="value: oldPath" type="file" accept="image/*" id="imagePicker"/>
+                    <div>Image from file<input data-bind="value: oldPath" type="file" accept="image/*" id="imagePicker"/>
                         <button data-bind="click: function() {
-                            
-                            createImage();
-                            addImage(newPath());
-                            console.log('image uploaded: ' + newPath());//document.getElementById('imagePicker').value);
+                            let photo = document.getElementById('imagePicker').files[0];
+                            let formData = new FormData();
+                            let today = new Date();
+                            let todaysDate = 'photo' + today.getHours() + today.getMinutes() + today.getSeconds();
+                            formData.append(todaysDate, photo);
+                            fetch('/upload/image', {method: 'POST', body: formData});
+                            addImage('/upload/image/' + todaysDate);
+                            console.log('image uploaded: ' + todaysDate);
                         }">
                         Insert selected image</button>
                     </div>
+                    <button data-bind="click: function() {
+                        var url = prompt('Paste the image URL below');
+                        addImage(url);
+                    }">Image from Web</button>
                     <button data-bind="click: function() {
                         var url = prompt('Paste the video URL below');
                         console.log('0' + url);
