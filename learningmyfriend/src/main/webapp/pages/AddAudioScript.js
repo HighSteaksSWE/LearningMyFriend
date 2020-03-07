@@ -1,8 +1,12 @@
-function addImage(name) {
+function addAudio(name) {
     // name is the path in this instance
+    let soundtype = name.substring(name.lastIndexOf('.') + 1);
+    if (soundtype=="mid") { soundtype = "midi"; }
     document.getElementById("slideedit").innerHTML +=
-            "<div class='image'  id='" + name + "'>" +
-                "<img src='"+ name +"' + width='500'></img></div>";
+            "<audio controls>\n\
+                <source src='"+name+"' type='audio/"+soundtype+"'>\n\
+                Audio File\n\
+            </audio>";
     document.makeDraggable(document.getElementById(name));
 }
 
