@@ -1,9 +1,7 @@
-function addImage(name) {
+function youtubeEmbed(name) {
     // name is the path in this instance
-    name = "Image" + name;
     document.getElementById("slideedit").innerHTML +=
-            "<div class='image'  id='" + name + "'>" +
-                "<img src='"+ name +"'></img></div>";
+            "<div class='youtube'> <iframe src='https://www.youtube.com/embed/"+name+"' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div>";
     document.makeDraggable(document.getElementById(name));
 }
 

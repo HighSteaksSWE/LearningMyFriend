@@ -11,6 +11,8 @@
         <script src="toPdf.js"></script>
         <script src="dropdownmenu.js" ></script>
         <script src="presentScript.js" ></script>
+        <script src="YouTubeEmbedScript.js"></script>
+        <script src="AddAudioScript.js"></script>
         <script>
             $(document).ready(
                     function () {
@@ -24,20 +26,20 @@
     <body>
         <div class="buttonbar">
             <div class="dropdown" onclick="myFunction('filedrop')">
-                File
+                ফাইল<br>File
                 <div class="dropdowncontent" id="filedrop" >
-                    <button>New</button>
-                    <button>Save</button>
-                    <button>Save As...</button>
-                    <button>Open</button>
-                    <button>Export</button>
-                    <button>Print</button>
-                    <button>Rename</button>
-                    <button>Close</button>
+                    <button>নতুন<br>New</button>
+                    <button data-bind="click: function() {toPDF();}">রক্ষা করা<br>Save</button>
+                    <!--<button>Save As...</button>-->
+                    <button>খোলা<br>Open</button>
+                    <button data-bind="click: function() {toPDF();}">রপ্তানি<br>Export</button>
+                    <button data-bind="click: function() {toPDF();}">ছাপা<br>Print</button>
+<!--                    <button>Rename</button>
+                    <button>Close</button>-->
                 </div>
             </div>
-            <div class="dropdown"  onclick="myFunction('editdrop')">
-                Edit
+<!--            <div class="dropdown"  onclick="myFunction('editdrop')">
+                পরিবর্তন করা<br>Edit
                 <div class="dropdowncontent" id="editdrop">
                     <button>Undo</button>
                     <button>Redo</button>
@@ -45,27 +47,49 @@
                     <button>Copy</button>
                     <button>Paste</button>
                 </div>
-            </div>
+            </div>-->
             <div class="dropdown"  onclick="myFunction('insertdrop')">
-                Insert
+                সন্নিবেশিত করা<br>Insert
                 <div class="dropdowncontent" id="insertdrop">
-                    <button data-bind="click: addSlide">New Slide</button>
-                    <button data-bind="click: function() {increaseTextCount(); addText(textCount()); makedraggable()}">Text Box</button>                   
-                    <input type="button" id="add" value="Add to list">
-                    <div>Image<input type="file" accept="image/*" id="imagePicker"/>
+                    <button data-bind="click: addSlide">নতুন<br>New Slide</button>
+                    <button data-bind="click: function() {increaseTextCount(); addText(textCount()); makedraggable()}">পাঠ<br>Text Box</button>                   
+                    <input type="button" id="add" value="সংযুক্ত করো / Add to list">
+                    <!-- div>Image from file<input data-bind="value: oldPath" type="file" accept="image/*" id="imagePicker"/>
                         <button data-bind="click: function() {
-                            addImage(createImage(document.getElementById('imagePicker').value));
-//                            makedraggable(); 
-                            console.log('image uploaded: ' + document.getElementById('imagePicker').value);
+                            let photo = document.getElementById('imagePicker').files[0];
+                            let formData = new FormData();
+                            let today = new Date();
+                            let todaysDate = 'photo' + today.getHours() + today.getMinutes() + today.getSeconds();
+                            formData.append(todaysDate, photo);
+                            fetch('/upload/image', {method: 'POST', body: formData});
+                            addImage('/upload/image/' + todaysDate);
+                            console.log('image uploaded: ' + todaysDate);
                         }">
                         Insert selected image</button>
-                    </div>
-                    <button>Shape</button>
-                    <button>Code</button>
+                    </div -->
+                    <button data-bind="click: function() {
+                        var url = prompt('Paste the image URL below');
+                        addImage(url);
+                    }">ইন্টারনেট থেকে ছবি<br>Image from Web</button>
+                    <button data-bind="click: function() {
+                        var url = prompt('Paste the video URL below');
+                        console.log('0' + url);
+                        url = url.substring(url.lastIndexOf('/') + 1);
+                        console.log('1 ' + url);
+                        url = url.substring(url.lastIndexOf('=') + 1);
+                        console.log('2' + url);
+                        youtubeEmbed(url);
+                    }">ইউটিউব ভিডিও<br>YouTube Video</button>
+                    <button data-bind="click: function() {
+                        var url = prompt('Paste the audio URL below');
+                        addAudio(url);
+                    }">ইন্টারনেট থেকে শব্দ<br>Audio from Web</button>
+<!--                    <button>Shape</button>
+                    <button>Code</button>-->
                 </div>
 
             </div>
-            <div class="dropdown"  onclick="myFunction('viewdrop')">
+<!--            <div class="dropdown"  onclick="myFunction('viewdrop')">
                 View
                 <div class="dropdowncontent" id="viewdrop">
                     <button>Zoom In</button>
@@ -75,11 +99,11 @@
                     <button>Slide Preview</button>
                     <button>Slide Numbers</button>
                 </div>
-            </div>
-            <div class="dropdown" onclick="toPDF();">PDF</div>
-            <div class="dropdown">QR</div>
-            <div class="dropdown" onclick="togglePresent()">Present</div>
-            <div class="dropdown">Help</div>
+            </div>-->
+            <div class="dropdown" onclick="toPDF();">ছাপা<br>PDF</div>
+            <!--<div class="dropdown">QR</div>-->
+            <div class="dropdown" onclick="togglePresent()">পেশ করা<br>Present</div>
+            <!--<div class="dropdown">Help</div>-->
         </div>
 
         <div class="textedit">
